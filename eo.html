@@ -1,0 +1,39 @@
+<html>
+	<head>
+		<title> Even / Odd Finder by Chinmay </title>
+		<style>
+			* { font-size:50px; font-family:verdana;color:black;}
+			body { background-color:lightblue;}
+		</style>
+		<script>
+			function find()
+			{
+				event.preventDefault();
+				let num = document.getElementById("num");
+				let ans = document.getElementById("ans");
+				if(num.value.length == 0)
+				{
+					alert("Invalid Input");
+					num.focus();
+					ans.innerHTML = "";
+					return;
+				}
+				let n = parseInt(num.value);
+				let r = n % 2 == 0 ? "Even" : "Odd";
+				let msg = "Result = " + r;
+				ans.innerHTML = msg;
+			}
+		</script>
+	</head>
+	<body background= "numbers.jpg">
+	<center>
+		<h1> Even / Odd Finder </h1>
+		<form onsubmit="return find()">
+			<input type="number" placeholder="enter an integer"	 id="num" />
+			<br></br>
+			<input type="submit" value="Find" />
+		</form>
+		<h1 id="ans"></h1>
+	</center>
+	</body>
+</html>
